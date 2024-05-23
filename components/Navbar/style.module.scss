@@ -3,10 +3,19 @@
 .navContainer {
   position: fixed;
   top: 0;
+  z-index: 999;
   padding: 10px 70px;
   width: 100%;
   background: transparent;
   box-shadow: 0 2px 5px rgb(104 111 165);
+
+  &.addBGColor {
+    background: rgba(29, 29, 29, 0.9);
+  }
+
+  &.scrolled {
+    background: rgba(29, 29, 29, 0.9);
+  }
 
   @include respond(mobile) {
     padding: 10px;

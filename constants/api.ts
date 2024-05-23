@@ -1,5 +1,5 @@
 export const APIS = {
   //Apartments
-  PRODUCTION_URL: "https://apartments-production-15ef.up.railway.app/api/v1/",
-  GET_ALL_APARTMENTS: "apartments",
+  PRODUCTION_URL: "https://newsapi.org/v2/",
+  GET_ALL_NEWS: "everything",
 };

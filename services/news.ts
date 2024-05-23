@@ -1,16 +1,23 @@
-import { ROUTES } from "@/constants/routes";
+import { ROUTES, apiEndPoints } from "@/constants/routes";
 import { http } from "./api";
-import { INews } from "@/types/news";
+import { NewsArticle } from "@/types/news";
 
-export async function getAllNews(): Promise<any> {
+export async function getAllNews(): Promise<NewsArticle[]> {
   const resp: any = await http({
-    url: ROUTES.ALL_NEWS,
+    url: `${apiEndPoints.ALL_NEWS}gaza`,
     method: "GET",
+    api_key: process.env.NEWS_API_KEY,
   });
 
-  if (resp.status === 1 && resp.data) {
-    return resp;
-  }
+  return resp;
+}
+export async function getCountryNews(country: string): Promise<any> {
+  const resp: any = await http({
+    url: `apiEndPoints.NEWS_SELECTED_COUNTRY${country}`,
+    method: "GET",
+    api_key: process.env.NEWS_API_KEY,
+  });
+
   return resp;
 }
 

@@ -11,6 +11,7 @@ export interface HttpClientParams {
   revalidate?: number;
   query?: string;
   fullUrl?: boolean;
+  api_key?: string;
 }
 export type Status = 0 | 1; //0: error //1: success
 

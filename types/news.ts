@@ -1,10 +1,15 @@
-export interface INews {
-  _id?: string;
+interface Source {
+  id: string;
+  name: string;
+}
+
+export interface NewsArticle {
+  source: Source;
+  author: string;
   title: string;
   description: string;
-  price: string;
-  location: string;
-  images: string[];
-  unClickable?: boolean;
-  showSlider?: boolean;
+  url: string;
+  urlToImage: string;
+  publishedAt: string;
+  content: string;
 }

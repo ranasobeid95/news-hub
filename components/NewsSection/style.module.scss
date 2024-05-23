@@ -1,0 +1,21 @@
+@use "@/styles/mixins/main" as *;
+
+.NewsSectionContainer {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 15px;
+  max-width: 1080px;
+  @include flex(center, center, column, 2px);
+  background-color: #f0f2f5;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.NewsSectionTitle {
+  color: #303030;
+}
+
+.NewsSectionList {
+  @include flex(center, center, row, 8px);
+  flex-wrap: wrap;
+}
