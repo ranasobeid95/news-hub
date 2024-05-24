@@ -1,13 +1,21 @@
 @use "@/styles/mixins/main" as *;
 
 .inputContainer {
-  @include flex(flex-start, flex-start, column, 4px);
+  @include flex(center, center, column, 4px);
   align-self: stretch;
 }
 
 .formControl {
   @include styleInputContainer();
   color: #d1d1d1;
+
+  @include respond(mobile) {
+    width: 80%;
+  }
+
+  @include respond(mobile-small) {
+    width: 80%;
+  }
 
   &.disabled {
     background-color: #3f3f3f;

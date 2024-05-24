@@ -1,7 +1,6 @@
 "use client";
 import { SyntheticEvent, useEffect, useRef, useState } from "react";
 import styles from "./style.module.scss";
-import ErrorMsg from "../Errors/ErrorMsg";
 import { INPUT_TYPES, InputProps } from "@/types/shared";
 
 export default function Input({
@@ -11,7 +10,7 @@ export default function Input({
   className = "",
   name,
   value,
-  error,
+  error = "",
   disabled = false,
   readOnly = false,
   width = "100%",
@@ -20,6 +19,7 @@ export default function Input({
   height = "48px",
   onChange,
   onBlur,
+  leadingIcon,
   maxLength,
 }: InputProps) {
   return (
@@ -31,6 +31,8 @@ export default function Input({
         }`}
         style={{ width, height }}
       >
+        {leadingIcon && leadingIcon}
+
         <input
           className={styles.generalInput}
           tabIndex={0}
@@ -46,11 +48,6 @@ export default function Input({
           required={required}
           maxLength={maxLength}
         />
-      </div>
-      <div className={styles.hint}>
-        <div>
-          <ErrorMsg error={error} />
-        </div>
       </div>
     </div>
   );

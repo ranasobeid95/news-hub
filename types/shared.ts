@@ -14,7 +14,7 @@ export interface InputProps {
   name: string;
   placeholder?: string;
   className?: string;
-  error: string | undefined;
+  error?: string | undefined;
   disabled?: boolean;
   readOnly?: boolean;
   width?: string;
@@ -27,4 +27,5 @@ export interface InputProps {
   hide?: boolean;
   inputClassName?: string;
   height?: string;
+  leadingIcon?: React.ReactNode;
 }

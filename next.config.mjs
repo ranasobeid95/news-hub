@@ -3,6 +3,14 @@ const nextConfig = {
   env: {
     NEWS_API_KEY: process.env.NEWS_API_KEY,
   },
+  async rewrites() {
+    return [
+      {
+        source: "/:path*",
+        destination: "/", // The :path parameter isn't used here so will be automatically passed in the query
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

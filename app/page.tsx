@@ -24,6 +24,11 @@ export default function ApartmentsPage() {
     }
   };
 
+  const getNews = (value: any) => {
+    console.log("allNewsData :>> ", allNewsData);
+    console.log("value :>> ", value);
+  };
+
   return (
     <div className={styles.allNewsContainerStyle}>
       {/* {allNewsLoading ? (
@@ -43,7 +48,7 @@ export default function ApartmentsPage() {
           </div>
         </section>
 
-        <NewsSection news={allNewsData!} />
+        <NewsSection handleOnChange={getNews} news={allNewsData!} />
       </>
       {/* )} */}
     </div>

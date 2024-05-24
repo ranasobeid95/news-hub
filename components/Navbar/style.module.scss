@@ -10,11 +10,11 @@
   box-shadow: 0 2px 5px rgb(104 111 165);
 
   &.addBGColor {
-    background: rgba(29, 29, 29, 0.9);
+    background: #0e101d;
   }
 
   &.scrolled {
-    background: rgba(29, 29, 29, 0.9);
+    background: #0e101d;
   }
 
   @include respond(mobile) {

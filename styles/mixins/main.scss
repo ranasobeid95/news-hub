@@ -91,6 +91,7 @@
   font-weight: 400;
   line-height: 22px;
   color: #ebebeb;
+  padding-left: 5px;
   flex: 1;
   &:focus-within,
   &:focus-visible {
@@ -99,13 +100,15 @@
   @include stylePlaceholder();
 }
 
-@mixin styleInputContainer($bg: #262626) {
-  @include flex(center, null, null, 4px);
+@mixin styleInputContainer($bg: #0e101d) {
+  @include flex(center, center, null, 4px);
   height: $input-height;
   border-radius: 8px;
   background: $bg;
   transition: $border-transition;
   padding: 12px 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 
   &:focus-within:not(.invalid) {
     border-bottom: 1px solid #00b5ff;
