@@ -7,7 +7,6 @@ export interface HttpClientParams {
   cookies?: any;
   headers?: any;
   version?: string;
-  json?: boolean;
   revalidate?: number;
   query?: string;
   fullUrl?: boolean;

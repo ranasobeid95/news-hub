@@ -3,7 +3,6 @@ import { HttpClientParams, ResponseBody } from "@/types/api";
 export async function http({
   method,
   body,
-  json = true,
   api_key = "",
   url,
   headers = {},
@@ -27,6 +26,6 @@ export async function http({
     return resp.json();
   } catch (error) {
     console.error("Error in HTTP request:", error);
-    throw error; // Rethrow the error to handle it in the calling function
+    throw error;
   }
 }
