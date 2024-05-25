@@ -98,6 +98,12 @@
     outline: none;
   }
   @include stylePlaceholder();
+  @include respond(mobile-small) {
+    width: 80% !important;
+  }
+  @include respond(mobile) {
+    width: 80% !important;
+  }
 }
 
 @mixin styleInputContainer($bg: #0e101d) {

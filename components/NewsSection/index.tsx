@@ -11,13 +11,18 @@ import Card from "../Card";
 import Input from "../Input";
 import { INPUT_TYPES } from "@/types/shared";
 import Search from "../Icons/Search";
+import Spinner from "../LoadingSpinner";
 
 export default function NewsSection({
-  news = [...newsArticles],
+  news,
   handleOnChange,
+  numberOfItems = news?.length,
+  loading,
 }: {
-  news: NewsArticle[];
+  news?: NewsArticle[];
   handleOnChange: (value: any) => void;
+  numberOfItems?: number;
+  loading: boolean;
 }) {
   return (
     <div id='news-section' className={`${styles.NewsSectionContainer}`}>
@@ -31,10 +36,23 @@ export default function NewsSection({
         onChange={(e) => handleOnChange(e.target.value)}
       />
       <div className={`${styles.NewsSectionList}`}>
-        {news.map((newsArticle) => (
-          <Card data={newsArticle} key={newsArticle.title} />
-        ))}
+        {loading ? (
+          <Spinner centered={true} size='40px' borderThickness='4px' />
+        ) : (
+          news &&
+          news.length > 0 &&
+          news
+            .slice(0, numberOfItems)
+            .map((newsArticle) => (
+              <Card data={newsArticle} key={newsArticle.title} />
+            ))
+        )}
       </div>
+      {news && (
+        <Link className={styles.linkStyle} href={ROUTES.ALL_NEWS}>
+          Reed more
+        </Link>
+      )}
     </div>
   );
 }

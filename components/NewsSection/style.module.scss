@@ -19,3 +19,11 @@
   @include flex(center, center, row, 8px);
   flex-wrap: wrap;
 }
+
+.linkStyle {
+  color: #4d61fc;
+  width: 100%;
+  padding: 0 15px;
+
+  @include flex(flex-end, flex-end, row, 8px);
+}

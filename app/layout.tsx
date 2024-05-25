@@ -15,6 +15,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={cairo.className}>
         {" "}
+        <Navbar />
         <ReactQueryProvider>{children}</ReactQueryProvider>
       </body>
     </html>

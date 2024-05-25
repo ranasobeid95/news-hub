@@ -27,3 +27,8 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.char {
+  transform: translateY(17px);
+  transition: transform 0.5s;
+}

@@ -1,6 +1,7 @@
 export const ROUTES = {
   Home: "/",
   NEWS_DETAILS: "details",
+  ALL_NEWS: "/all-news",
 };
 
 export const apiEndPoints = {
