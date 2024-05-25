@@ -8,7 +8,7 @@ import NewsSection from "@/components/NewsSection";
 import Navbar from "@/components/Navbar";
 import useAllNews from "@/hooks/news";
 
-export default function allNewsPage() {
+export default function AllNewsPage() {
   const [searchValue, setSearchValue] = useState("Gaza");
 
   const {
@@ -16,6 +16,7 @@ export default function allNewsPage() {
     isLoading: allNewsLoading,
     error: allNewsError,
   } = useAllNews(searchValue);
+
   return (
     <div className={styles.allNewsContainerStyle}>
       <NewsSection
