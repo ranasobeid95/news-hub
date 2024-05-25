@@ -12,15 +12,6 @@ export default function Card({
 }: {
   data: NewsArticle;
 }) {
-  console.log("data :>> ", {
-    urlToImage,
-    title,
-    description,
-    content,
-    author,
-    publishedAt,
-    url,
-  });
   const newsDetailsUrl = `${ROUTES.NEWS_DETAILS}?data=${encodeURIComponent(
     JSON.stringify({
       urlToImage,

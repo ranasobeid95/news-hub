@@ -25,7 +25,6 @@ export default function Navbar({ addBGColor = false }) {
       setIsScrolled(false);
     }
   };
-  console.log("pathname :>> ", pathname);
 
   return (
     <div

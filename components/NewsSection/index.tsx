@@ -33,7 +33,7 @@ export default function NewsSection({
         placeholder={"Search"}
         width={"50%"}
         leadingIcon={<Search />}
-        onChange={(e) => handleOnChange(e.target.value)}
+        onChange={(e) => handleOnChange(e.target.value.trim())}
       />
       <div className={`${styles.NewsSectionList}`}>
         {loading ? (

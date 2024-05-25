@@ -10,7 +10,7 @@ export async function GET(apiUrl: string) {
         Authorization: `Bearer ${apiKey}`,
       },
     });
-    return response.data;
+    return NextResponse.json({ data: response.data });
   } catch (error: any) {
     return NextResponse.json(
       { error: error.message },

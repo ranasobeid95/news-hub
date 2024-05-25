@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import NewsSection from "@/components/NewsSection";
 import Navbar from "@/components/Navbar";
 import useAllNews from "@/hooks/news";
+import ErrorMsg from "@/components/ErrorMsg";
 
 export default function AllNewsPage() {
   const [searchValue, setSearchValue] = useState("Gaza");
@@ -26,6 +27,8 @@ export default function AllNewsPage() {
         news={allNewsData}
         loading={allNewsLoading}
       />
+
+      {allNewsError && <ErrorMsg error={allNewsError.message} />}
     </div>
   );
 }

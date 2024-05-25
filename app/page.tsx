@@ -1,14 +1,15 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./style.module.scss";
-import { getAllNews, getCountryNews } from "@/services/news";
-import Spinner from "@/components/LoadingSpinner";
-import { useQuery } from "@tanstack/react-query";
 import NewsSection from "@/components/NewsSection";
 import Navbar from "@/components/Navbar";
+
 import useAllNews from "@/hooks/news";
+
 import { gsap } from "gsap";
 import SplitType from "split-type";
+
+import styles from "./style.module.scss";
+import ErrorMsg from "@/components/ErrorMsg";
 
 export default function ApartmentsPage() {
   const [searchValue, setSearchValue] = useState("Gaza");
@@ -65,6 +66,7 @@ export default function ApartmentsPage() {
 
         <NewsSection
           handleOnChange={(value: any) => {
+            if (!value) setSearchValue("Gaza");
             setSearchValue(value);
           }}
           loading={allNewsLoading}
@@ -72,6 +74,7 @@ export default function ApartmentsPage() {
           numberOfItems={6}
         />
       </>
+      {allNewsError && <ErrorMsg error={allNewsError.message} />}
     </div>
   );
 }
