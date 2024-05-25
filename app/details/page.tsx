@@ -10,7 +10,6 @@ import Navbar from "@/components/Navbar";
 export default function DetailsPage() {
   return (
     <div className={styles.allNewsContainerStyle}>
-      <Navbar addBGColor={true} />
       <section className={styles.HeaderStyle}> Deta</section>
     </div>
   );
