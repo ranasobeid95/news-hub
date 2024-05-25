@@ -1,9 +1,19 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import axios from "axios";
 
 const apiKey = process.env.NEWS_API_KEY;
 
-export async function GET(apiUrl: string) {
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const apiUrl = searchParams.get("apiUrl");
+
+  if (!apiUrl) {
+    return NextResponse.json(
+      { error: "Missing apiUrl query parameter" },
+      { status: 400 }
+    );
+  }
+
   try {
     const response = await axios.get(apiUrl, {
       headers: {
