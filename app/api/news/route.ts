@@ -1,12 +1,9 @@
-// Import necessary modules
 import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
 
-// Define your API key
 const apiKey = process.env.NEWS_API_KEY;
 
 export async function GET(request: NextRequest) {
-  // Check if it's a preflight request and handle it
   if (request.method === "OPTIONS") {
     return NextResponse.next({
       headers: {
